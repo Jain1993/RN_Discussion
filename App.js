@@ -44,6 +44,14 @@ import DOMUseRef from './src/DOMUseRef';
 import PersistValueUseRef from './src/PersistValueUseRef';
 import WithComponentDidMount from './src/WithComponentDidMount';
 import WithUseCallback from './src/WithUseCallback';
+import WithoutUseReducer from './src/useReducer/WithoutUseReducer';
+import WithUseReducer from './src/useReducer/WithUseReducer';
+import UseReducerInChild from './src/useReducer/UseReducerInChild';
+import WithoutUseContext from './src/useContext/WithoutUseContext';
+import WithUseContext from './src/useContext/WithUseContext';
+import ContextWithReducer from './src/useContext/ContextWithReducer';
+import RerenderingProblem from './src/useContext/RerenderingProblem';
+import WithUseLayoutEffect from './src/useLayoutEffect/WithUseLayoutEffect';
 
 const Stack = createNativeStackNavigator();
 
@@ -51,7 +59,7 @@ const App: () => Node = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="AsynchronousState"
+        initialRouteName="UseReducerInChild"
         screenOptions={{
           headerShown: false,
         }}>
@@ -83,6 +91,24 @@ const App: () => Node = () => {
         <Stack.Screen name="WithoutUseMemo" component={WithoutUseMemo} />
         <Stack.Screen name="WithUseMemo" component={WithUseMemo} />
         <Stack.Screen name="WithUseCallback" component={WithUseCallback} />
+        <Stack.Screen name="WithoutUseReducer" component={WithoutUseReducer} />
+        <Stack.Screen name="WithUseReducer" component={WithUseReducer} />
+        <Stack.Screen name="UseReducerInChild" component={UseReducerInChild} />
+
+        <Stack.Screen name="WithoutUseContext" component={WithoutUseContext} />
+        <Stack.Screen name="WithUseContext" component={WithUseContext} />
+        <Stack.Screen
+          name="ContextWithReducer"
+          component={ContextWithReducer}
+        />
+        <Stack.Screen
+          name="RerenderingProblem"
+          component={RerenderingProblem}
+        />
+        <Stack.Screen
+          name="WithUseLayoutEffect"
+          component={WithUseLayoutEffect}
+        />
       </Stack.Navigator>
     </NavigationContainer>
     // <View style={styles.container}>
