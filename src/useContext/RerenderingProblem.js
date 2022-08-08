@@ -1,11 +1,11 @@
 import React, { createContext, useContext, useMemo, useState } from 'react'
-import { Button, Text } from "react-native";
+import { Button, Text, View } from "react-native";
 import { Context, DECREMENT, INCREMENT, Provider } from './CreateDataContext';
 
 const SayHello = () => {
     const { state } = useContext(Context);
     console.log("SayHello is running");
-    return <Text style={{ alignSelf : 'center' }} >{'Hello'}</Text>;
+    return <Text style={{ alignSelf: 'center' }} >{'Hello'}</Text>;
 };
 
 const IncrementCounter = () => {
@@ -19,24 +19,26 @@ const IncrementCounter = () => {
 
 const DecrementCounter = () => {
     const { state, dispatch } = useContext(Context);
-    console.log("DecrementCounter is running");
+    console.log("DecrementCounter is running \n --------");
     const decreaseCount = () => {
         dispatch({ type: DECREMENT });
     }
-    return <Button onPress={decreaseCount} title='Decrement' />;
+    return <Button onPress={decreaseCount} title='Decrement'  />;
 };
 
 const ShowResult = () => {
     console.log("ShowResult is running");
     const { state } = useContext(Context);
-    return <Text style={{ alignSelf : 'center' }} >{state?.count}</Text>;
+    return <Text style={{ alignSelf: 'center', marginVertical : 10 }} >{state?.count}</Text>;
 };
 
 export default RerenderingProblem = () => (
     <Provider>
-        <SayHello />
-        <ShowResult />
-        <IncrementCounter />
-        <DecrementCounter />
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <SayHello />
+            <ShowResult />
+            <IncrementCounter />
+            <DecrementCounter />
+        </View>
     </Provider>
 );

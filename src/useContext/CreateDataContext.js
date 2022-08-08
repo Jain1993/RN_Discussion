@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 
-//Actions
+//Action Constants
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
 

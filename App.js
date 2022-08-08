@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
+import type { Node } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -17,8 +17,8 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import {
   Colors,
@@ -52,6 +52,7 @@ import WithUseContext from './src/useContext/WithUseContext';
 import ContextWithReducer from './src/useContext/ContextWithReducer';
 import RerenderingProblem from './src/useContext/RerenderingProblem';
 import WithUseLayoutEffect from './src/useLayoutEffect/WithUseLayoutEffect';
+import UseImperativeHandle from './src/useImperativeHandle/UseImperativeHandle';
 
 const Stack = createNativeStackNavigator();
 
@@ -59,7 +60,7 @@ const App: () => Node = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="UseReducerInChild"
+        initialRouteName="WithoutUseReducer"
         screenOptions={{
           headerShown: false,
         }}>
@@ -90,25 +91,20 @@ const App: () => Node = () => {
         />
         <Stack.Screen name="WithoutUseMemo" component={WithoutUseMemo} />
         <Stack.Screen name="WithUseMemo" component={WithUseMemo} />
-        <Stack.Screen name="WithUseCallback" component={WithUseCallback} />
+        <Stack.Screen name="WithUseCallback" component={WithUseCallback} /> 
+
         <Stack.Screen name="WithoutUseReducer" component={WithoutUseReducer} />
         <Stack.Screen name="WithUseReducer" component={WithUseReducer} />
         <Stack.Screen name="UseReducerInChild" component={UseReducerInChild} />
 
         <Stack.Screen name="WithoutUseContext" component={WithoutUseContext} />
         <Stack.Screen name="WithUseContext" component={WithUseContext} />
-        <Stack.Screen
-          name="ContextWithReducer"
-          component={ContextWithReducer}
-        />
-        <Stack.Screen
-          name="RerenderingProblem"
-          component={RerenderingProblem}
-        />
-        <Stack.Screen
-          name="WithUseLayoutEffect"
-          component={WithUseLayoutEffect}
-        />
+        <Stack.Screen name="ContextWithReducer" component={ContextWithReducer} />
+        <Stack.Screen name="RerenderingProblem" component={RerenderingProblem} />
+
+        <Stack.Screen name="UseImperativeHandle" component={UseImperativeHandle} />
+
+        <Stack.Screen name="WithUseLayoutEffect" component={WithUseLayoutEffect} />
       </Stack.Navigator>
     </NavigationContainer>
     // <View style={styles.container}>

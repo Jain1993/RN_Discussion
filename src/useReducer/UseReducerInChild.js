@@ -16,8 +16,8 @@ const UseReducerInChild = () => {
     {console.log(state)}
     return (
         <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }} >
-            {/* <Text style={{ fontSize: 18, fontWeight: 'bold' }} > {state.count} </Text> */}
-            <Button title="Increase Count" onPress={() => { increaseCount() }} />
+            <Text style={{ fontSize: 18, fontWeight: 'bold' }} > {'Child : ' + state?.count} </Text>
+            {/* <Button title="Increase Count" onPress={() => { increaseCount() }} /> */}
         </View>
     );
 }

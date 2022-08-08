@@ -49,12 +49,11 @@ const UseImperativeHandle = () => {
 // const ForwardRefChild = forwardRef(Child);
 
 // const UseImperativeHandle = () => {
-//     const [count, setCount] = useState(0)
 //     let parentRef = useRef('parentRef')
 //     console.log('Parent render');
 //     return (
 //         <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-//             <ForwardRefChild count={count} ref={parentRef} />
+//             <ForwardRefChild ref={parentRef} />
 //             <Button title='Increase Count' onPress={() => parentRef.current.increaseCount()} />
 //             <Button title='Decrease Count' onPress={() => parentRef.current.decreaseCount()} />
 //         </View>

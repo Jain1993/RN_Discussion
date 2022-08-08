@@ -46,7 +46,10 @@ const WithUseReducer = () => {
         <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }} >
             <Text style={{ fontSize: 18, fontWeight: 'bold' }} > {state.count} </Text>
             <Button title="Increase Count" onPress={() => increaseCount()} />
+
+            <View style={{ marginTop : 10 }} >
             <Button title="Go to child" onPress={() => navigation.navigate('UseReducerInChild')} />
+            </View>
         </View>
     );
 }
